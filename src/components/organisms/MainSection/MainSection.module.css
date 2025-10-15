@@ -1,0 +1,211 @@
+.mainSection {
+  padding: 20px;
+  background-color: #eff3f9;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  overflow-x: hidden;
+}
+
+/* Назначение областей */
+.header,
+.video,
+.buttonsContainer,
+.videoBtn,
+.qrBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Скрываем QR на мобильных */
+.qrBtn {
+  display: none;
+}
+
+@media (min-width: 744px) {
+  .qrBtn {
+    display: block;
+  }
+}
+
+/* Планшеты (744px - 1200px) - flexbox для кнопок */
+@media (min-width: 744px) and (max-width: 1199px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header {
+    order: 1;
+  }
+
+  .video {
+    order: 2;
+  }
+
+  .buttonsContainer {
+    order: 3;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .videoBtn {
+    flex: 1;
+  }
+
+  .qrBtn {
+    flex: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header video video"
+      "buttonsContainer buttonsContainer video video";
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .header {
+    grid-area: header;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .video {
+    grid-area: video;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonsContainer {
+    grid-area: buttonsContainer;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .videoBtn {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .qrBtn {
+    flex: 2;
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1.2fr) minmax(
+        150px,
+        204px
+      );
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header video videoBtn"
+      "header video qrBtn";
+    height: 100%;
+  }
+
+  .header {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonsContainer {
+    display: contents;
+  }
+
+  .videoBtn {
+    grid-area: videoBtn;
+    flex: none;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .qrBtn {
+    grid-area: qrBtn;
+    flex: none;
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+/* ≥ 1920px: фиксированная ширина */
+@media (min-width: 1920px) {
+  .grid {
+    grid-template-columns: 300px 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header video video videoBtn"
+      "header header video video qrBtn";
+    height: 100%;
+  }
+
+  .header {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonsContainer {
+    display: contents;
+  }
+
+  .videoBtn {
+    grid-area: videoBtn;
+    flex: none;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .qrBtn {
+    grid-area: qrBtn;
+    flex: none;
+    display: flex;
+    align-items: stretch;
+  }
+}

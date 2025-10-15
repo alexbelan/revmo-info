@@ -1,0 +1,47 @@
+.logo {
+  padding: 12px 24px !important; /* Отступы как на скриншоте: 12px сверху/снизу, 24px слева/справа */
+  background: var(--White) !important; /* Белый фон */
+  border-radius: 36px !important;
+  border: none !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* Выравниваем по центру горизонтально */
+  gap: 12px !important;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  box-shadow: none !important; /* Убираем тень для плоского дизайна */
+  overflow: visible !important; /* Иконка не режется */
+  color: var(--Black) !important; /* Черный текст */
+  width: fit-content !important; /* Ширина по содержимому */
+  height: 60px !important; /* Фиксированная высота: 12px + 36px + 12px = 60px */
+  min-height: 60px !important; /* Минимальная высота */
+  max-height: 60px !important; /* Максимальная высота */
+}
+
+.logo:hover {
+  opacity: 0.8;
+  background: var(--White, #fff) !important; /* Сохраняем белый фон при hover */
+  color: var(
+    --Black,
+    #08050d
+  ) !important; /* Сохраняем черный текст при hover */
+}
+
+.logoIcon {
+  width: 40px;
+  height: 36px;
+  flex-shrink: 0;
+  overflow: visible; /* Иконка не режется */
+  display: block;
+}
+
+.logoText {
+  color: var(--Black);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2; /* Естественная высота строки */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}

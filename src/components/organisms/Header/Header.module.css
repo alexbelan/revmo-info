@@ -1,0 +1,96 @@
+.header {
+  height: 0;
+  background: #eff3f9;
+}
+
+.headerContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+/* Контейнер для лого */
+.logoContainer {
+  display: none;
+}
+
+/* Скрываем GradientButton на мобилках (до 744px) */
+.downloadButtonContainer {
+  display: none;
+}
+
+/* Показываем Logo и GradientButton после 744px */
+@media (min-width: 745px) {
+  .logoContainer {
+    display: block;
+  }
+
+  .downloadButtonContainer {
+    display: block;
+  }
+
+  .headerContentLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+/* Планшеты (744px - 992px) - Header с нормальной высотой */
+@media (min-width: 744px) {
+  .header {
+    min-height: 90px;
+    height: auto;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  /* Контент Header для планшетов */
+  .headerContent {
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center;
+    gap: 16px;
+  }
+
+  .headerContentLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Кнопка скачивания для планшетов */
+  .downloadButton {
+    flex-shrink: 0;
+  }
+}
+
+/* Десктоп (1200px+) - показываем десктопное меню */
+@media (min-width: 1200px) {
+  .header {
+    min-height: 100px;
+    padding: 20px;
+  }
+
+  .headerContent {
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .downloadButton {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    min-height: 120px;
+    padding: 28px;
+  }
+
+  .downloadButton {
+    display: block;
+  }
+}

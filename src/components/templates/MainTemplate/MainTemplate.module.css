@@ -1,0 +1,18 @@
+.mainTemplate {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Header занимает минимум места */
+.mainTemplate > :first-child {
+  flex-shrink: 0;
+}
+
+/* MainSection занимает оставшееся пространство */
+.mainTemplate > :last-child {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}

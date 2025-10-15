@@ -1,0 +1,152 @@
+/* Основная кнопка */
+.gradientButton {
+  display: flex;
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Круг с иконкой слева */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--Black);
+  z-index: 2;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.iconImage {
+  color: var(--White);
+}
+
+.iconSvg {
+  color: var(--White);
+  stroke: var(--White);
+  fill: var(--White);
+  width: 24px;
+  height: 24px;
+}
+
+.iconSvg svg {
+  stroke: var(--White) !important;
+  fill: var(--White) !important;
+  color: var(--White) !important;
+}
+
+.iconSvg svg path {
+  stroke: var(--White) !important;
+  fill: none !important;
+}
+
+.iconSvg svg * {
+  stroke: var(--White) !important;
+  fill: none !important;
+}
+.buttonContent {
+  display: flex;
+  padding: 16px 28px 16px 54px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 0;
+  background: var(--White);
+  border-radius: 36px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.text {
+  color: var(--Black);
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 12px;
+  transition: all 0.3s ease;
+}
+
+.arrowsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Стрелочки */
+.arrow {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  padding: 3.75px 0;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+
+.arrow:first-child {
+  opacity: 0.2;
+}
+
+.arrow:nth-child(2) {
+  opacity: 0.4;
+}
+
+.arrow:last-child {
+  opacity: 0.6;
+}
+
+.arrowIcon {
+  width: 7px;
+  height: 12px;
+  color: var(--Black);
+  transition: all 0.3s ease;
+}
+
+/* Hover эффекты */
+.gradientButton:hover .iconContainer {
+  left: calc(100% - 54px);
+  right: 6px;
+}
+
+.gradientButton:hover .buttonContent {
+  padding: 16px 54px 16px 28px;
+}
+
+.gradientButton:hover .text {
+  margin-left: 0;
+  margin-right: 12px;
+  background: var(--Gradient-4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientButton:hover .arrowIcon {
+  stroke: url(#gradient);
+  fill: none;
+}
+
+.gradientButton:hover .arrowIcon svg {
+  stroke: url(#gradient) !important;
+  fill: none !important;
+}
+
+.gradientButton:hover .arrowIcon svg * {
+  stroke: url(#gradient) !important;
+  fill: none !important;
+}
+
+.gradientButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

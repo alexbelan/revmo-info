@@ -1,0 +1,45 @@
+.videoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.video {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 36px;
+  display: block;
+}
+
+/* Анимация для мобилок */
+@media (max-width: 744px) {
+  .video {
+    animation: expandVideo linear both;
+    animation-timeline: scroll(root);
+    animation-range: entry 0% entry 50%;
+  }
+}
+
+@keyframes expandVideo {
+  0% {
+    height: 181px;
+  }
+  100% {
+    height: 377px;
+  }
+}
+
+@media (max-width: 744px) {
+  .videoBlock {
+    padding: 0 !important;
+  }
+}
+
+/* Планшеты и десктопы (от 744px) */
+@media (min-width: 744px) {
+  .video {
+    height: 377px;
+  }
+}

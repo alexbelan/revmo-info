@@ -1,0 +1,198 @@
+/* Основной контейнер */
+.qrButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card внутри QRButton */
+.card {
+  padding: 36px; /* Отступы как на скриншоте */
+}
+
+/* Контент */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Отступ между левой и правой секциями */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Левая секция - кнопка с текстом */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Кнопка с QR иконкой */
+.qrIconButton {
+  border-radius: 50%;
+  background: var(--Green-brand);
+  padding: 12px;
+  box-shadow: none !important;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrIconButton svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.iconImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Текст */
+.text {
+  color: var(--Black);
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Правая секция - QR код */
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* QR код */
+.qrCode {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Изображение QR кода */
+.qrImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Наложенные иконки */
+.overlayIcons {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+}
+
+.overlayIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.overlayIcon:first-child {
+  background: #2196f3;
+}
+
+.overlayIcon:last-child {
+  background: #673ab7;
+  transform: translateX(-8px);
+  z-index: 1;
+}
+
+/* Стили для экранов больше 1200px */
+@media (min-width: 1200px) {
+  .content {
+    align-items: flex-start;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .text {
+    text-align: left;
+  }
+
+  .rightSection {
+    justify-content: flex-end;
+  }
+}
+
+/* Стили для экранов 1440px+ - вертикальный layout */
+@media (min-width: 1440px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    height: 100%;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .rightSection {
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: stretch; /* Растягиваем по высоте */
+  }
+
+  .qrCode {
+    width: 100%;
+    flex: 1; /* Занимает всё доступное пространство */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qrImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 744px) {
+  .qrButton {
+    display: none;
+  }
+}

@@ -1,0 +1,99 @@
+.videoCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card внутри VideoButton */
+.card {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.playButton {
+  border-radius: 24px;
+  background: var(--Violet-brand);
+  padding: 12px;
+  gap: 10px;
+  box-shadow: none !important;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.textLine {
+  color: var(--Black);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* Стили для экранов больше 1200px */
+@media (min-width: 1200px) {
+  .card {
+    padding: 36px 0px 0px 36px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .content {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .textBlock {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .textLine {
+    text-align: left;
+  }
+}
+
+/* Стили для экранов 1440px+ - центрирование */
+@media (min-width: 1440px) {
+  .card {
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+  }
+
+  .content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textBlock {
+    align-items: center;
+    text-align: center;
+    width: auto;
+  }
+
+  .textLine {
+    text-align: center;
+  }
+}

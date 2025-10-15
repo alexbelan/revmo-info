@@ -1,0 +1,107 @@
+/* Контейнер меню */
+.menuContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Десктопное меню - горизонтальное */
+.desktopMenu {
+  display: inline-flex;
+  padding: 6px;
+  align-items: center;
+  border-radius: 36px;
+  background: var(--Black);
+  box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.25);
+  gap: 12px;
+}
+
+/* Пункты десктопного меню */
+.menuItem {
+  color: var(--White);
+  text-decoration: none;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 12px 18px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Иконка стрелки */
+.arrowIcon {
+  color: var(--White);
+  stroke: var(--White);
+  transition: all 0.3s ease;
+}
+
+/* Hover эффекты только для устройств с поддержкой hover */
+@media (hover: hover) {
+  .menuItem:hover {
+    background: transparent;
+    background: var(--Gradient-4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .menuItem:hover .arrowIcon {
+    stroke: url(#gradient);
+    fill: none;
+  }
+
+  .menuItem:hover .arrowIcon svg {
+    stroke: url(#gradient) !important;
+    fill: none !important;
+  }
+
+  .menuItem:hover .arrowIcon svg * {
+    stroke: url(#gradient) !important;
+    fill: none !important;
+  }
+}
+
+/* Активное состояние для тач-устройств */
+@media (hover: none) {
+  .menuItem:active {
+    background: transparent;
+    background: var(--Gradient-4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .menuItem:active .arrowIcon {
+    stroke: url(#gradient);
+    fill: none;
+  }
+
+  .menuItem:active .arrowIcon svg {
+    stroke: url(#gradient) !important;
+    fill: none !important;
+  }
+
+  .menuItem:active .arrowIcon svg * {
+    stroke: url(#gradient) !important;
+    fill: none !important;
+  }
+}
+
+/* Скрываем десктопное меню на мобильных и планшетах */
+@media (max-width: 991px) {
+  .desktopMenu {
+    display: none;
+  }
+}
+
+/* Показываем десктопное меню только на больших экранах */
+@media (min-width: 992px) {
+  .desktopMenu {
+    display: inline-flex;
+  }
+}
