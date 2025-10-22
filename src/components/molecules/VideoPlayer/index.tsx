@@ -14,7 +14,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   mainData,
   className = "",
 }) => {
-  // Fallback на статичное видео если API недоступен
   const videoUrl = mainData?.videoUrl || "/video/video-app.mp4";
 
   return (

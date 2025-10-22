@@ -1,7 +1,8 @@
 import { api } from "@/lib/api";
 import Footer from "@/organisms/Footer";
-import MainTemplate from "@/templates/MainTemplate";
-import ReviewsTemplate from "@/templates/ReviewsTemplate";
+import Header from "@/organisms/Header";
+import MainSection from "@/organisms/MainSection";
+import ReviewsSection from "@/organisms/ReviewsSection";
 
 // Функция для получения данных на сервере
 async function getPageData() {
@@ -23,11 +24,18 @@ export default async function Home() {
 
   return (
     <>
-      <MainTemplate navigationData={navigationData} mainData={mainData} />
-      <ReviewsTemplate
-        navigationData={navigationData}
-        sliderData={sliderData}
-      />
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Header navigationData={navigationData} mainData={mainData} />
+        <MainSection mainData={mainData} />
+      </div>
+      <ReviewsSection sliderData={sliderData} />
+
       <Footer mainData={mainData} navigationData={navigationData} />
     </>
   );

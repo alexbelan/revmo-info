@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 /* Card внутри QRButton */
@@ -140,7 +141,7 @@
   }
 
   .rightSection {
-    justify-content: flex-end;
+    align-items: end;
   }
 }
 

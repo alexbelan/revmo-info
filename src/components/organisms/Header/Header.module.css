@@ -1,6 +1,6 @@
 .header {
-  height: 0;
   background: #eff3f9;
+  flex-shrink: 0;
 }
 
 .headerContent {
@@ -41,8 +41,7 @@
 /* Планшеты (744px - 992px) - Header с нормальной высотой */
 @media (min-width: 744px) {
   .header {
-    min-height: 90px;
-    height: auto;
+    min-height: 100px;
     padding: 16px;
     overflow: visible;
   }
